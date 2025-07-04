@@ -12,12 +12,10 @@ def create_app():
     )
     app.secret_key = 'your-secret-key'
 
-    # Configure database
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
-    # Setup login manager
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
@@ -33,9 +31,6 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    
-    # Create tables if they don't exist
     with app.app_context():
         db.create_all()
-
     app.run(debug=True)

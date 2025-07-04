@@ -7,11 +7,12 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def landing():
+    # If user is logged in, redirect to /home
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
     return render_template('landing.html')
 
-@main.route('/')
+@main.route('/home')
 @login_required
 def home():
     return render_template('home.html')
