@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Apna Resume - Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Resume Feedback</h2>
+        <div class="feedback">
+            {{ feedback|safe }}
+        </div>
+        <br>
+        <a href="{{ url_for('main.home') }}">← Go Back</a>
+    </div>
+</body>
+</html>
