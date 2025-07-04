@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apna Resume - Smart Resume Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h1>Welcome to Apna Resume</h1>
+        <p>Get instant AI-powered feedback on your resume.</p>
+        <a href="{{ url_for('auth.signup') }}"><button>Get Started</button></a>
+        <a href="{{ url_for('auth.login') }}"><button style="margin-left: 1rem;">Log In</button></a>
+    </div>
+</body>
+</html>
